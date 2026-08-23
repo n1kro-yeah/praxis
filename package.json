@@ -1,0 +1,50 @@
+{
+  "name": "praxis",
+  "version": "1.0.0",
+  "description": "Praxis - a production-grade terminal AI coding agent. Provider-agnostic, LSP-aware, MCP-native, zero runtime dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "praxis": "./bin/praxis.mjs",
+    "px": "./bin/praxis.mjs"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./sdk": "./dist/sdk/index.js",
+    "./plugin": "./dist/plugin/api.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist",
+    "start": "node ./bin/praxis.mjs",
+    "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.7.0"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "cli",
+    "tui",
+    "coding-agent",
+    "llm",
+    "mcp",
+    "lsp"
+  ]
+}
